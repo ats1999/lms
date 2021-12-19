@@ -5,6 +5,9 @@ import { CacheProvider } from "@emotion/react";
 
 import theme from "@src/theme";
 import createEmotionCache from "@src/createEmotionCache";
+
+import Drawer from "@components/layout/Drawer";
+
 import "@styles/globals.css";
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -12,6 +15,8 @@ const clientSideEmotionCache = createEmotionCache();
 
 function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  // https://dev.to/ats1999/use-multiple-layouts-at-multiple-pages-in-next-js-2b8g
+  const getLayout = Component.getLayout || ((page) => <Drawer>{page}</Drawer>);
   return (
     <CacheProvider value={emotionCache}>
       <Head>
@@ -21,7 +26,7 @@ function MyApp(props) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Component {...pageProps} />
+        {getLayout(<Component {...pageProps} />)}
       </ThemeProvider>
     </CacheProvider>
   );
