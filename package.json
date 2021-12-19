@@ -1,0 +1,40 @@
+{
+  "name": "lms",
+  "version": "1.0.0",
+  "description": "A LMS",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "test",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ats1999/lms.git"
+  },
+  "keywords": [
+    "lms"
+  ],
+  "author": "Rahul (github.com/ats1999)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ats1999/lms/issues"
+  },
+  "homepage": "https://github.com/ats1999/lms#readme",
+  "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.4",
+    "@mui/material": "^5.2.4",
+    "next": "^12.0.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1"
+  }
+}
